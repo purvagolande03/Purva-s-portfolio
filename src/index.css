@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-textMain antialiased overflow-x-hidden;
+  }
+
+  @media (pointer: fine) {
+    body, a, button, [role="button"], input, select, textarea {
+      cursor: none !important;
+    }
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface/30 backdrop-blur-md border border-white/5;
+  }
+  .glass-card {
+    @apply bg-surface/40 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+}
